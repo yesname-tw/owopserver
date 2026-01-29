@@ -511,7 +511,7 @@ export class Client {
 
   async handlePreWorld(message, isBinary) {
     let expecting = [2, 0, 0, 1, 0][this.captchaState]
-    if (this.joiningWorld) this.expecting = 0
+    if (this.joiningWorld) expecting = 0
 
     if (expecting === 0) {
       //not expecting a message, destroy for protocol violation
@@ -633,3 +633,4 @@ export class Client {
     if (!this.stealth) this.world.playerUpdates.add(this)
   }
 }
+
