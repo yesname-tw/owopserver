@@ -71,7 +71,7 @@ export class Client {
   destroy() {
     if (this.destroyed) return
     this.destroyed = true
-    this.defeerredRegionActions = null
+    this.deferredRegionActions = null
     if (!this.ws.closed) this.ws.end()
     if (this.world) this.world.removeClient(this)
     this.ip.removeClient(this)
@@ -633,4 +633,5 @@ export class Client {
     if (!this.stealth) this.world.playerUpdates.add(this)
   }
 }
+
 
